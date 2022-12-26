@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=1.0" http-equiv="X-UA-Compatible"
+    content="ie=edge">
+  <link href="style.css" rel="stylesheet" type="text/css" />
+  <link rel="icon" href="math.png" type="image/x-icon">
+  <title>Number to Words</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&family=Roboto+Condensed:wght@300&family=Rubik:ital@1&display=swap"
+    rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab&display=swap" rel="stylesheet">
+</head>
+
+<body>
+  <h1>Convert Numbers to Word Form</h1>
+  <h6>
+    Supports <a  href="https://en.wikipedia.org/wiki/Scientific_notation" target="_blank">scientific notation</a> and numbers. However, <b>several things must be noted</b>:
+    <ul>
+      <li>All <b>positive</b> numbers are supported up to <b>1 trestrigintillion</b> or <b>1 x 10<sup>102</sup></b> → <b>[0, 1e102)</b></li>
+      <li>Negative numbers are <b>completely unsupported</b></li>
+      <li>Decimals are <b>only supported with scientific notation</b>, however, the scientific notation must produce a <b>positive integer</b>
+      <li>Values like 37.1 and 0.005e2 are <b>unsupported</b>, but values like 0.38e3 are <b>supported</b></li>
+      <li>The input is <b>sanitized</b>; <b>everything except</b> numbers, "E"/"e", and decimals are ignored</li>
+    </ul>
+    <br>
+    <div>
+      <input type="checkbox" id="dashes" checked>
+      <label for="dashes">Should the <span style="text-decoration: underline">word form</span> contain <b>dashes</b>?</label>
+    </div>
+  </h6>
+    <input type="text" id="number" placeholder="Enter number here" autocomplete="off">
+    <script src="script.js" defer></script>
+  <p id="output"></p>
+</body>
+</html>
