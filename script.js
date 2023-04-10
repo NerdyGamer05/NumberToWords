@@ -112,33 +112,6 @@ const input = () => { // Function for sanitizing the input
 const dashes = document.getElementById('dashes');
 const output = document.getElementById('output');
 
-/*
-  notes:
-  - fix floating error with biginteger => try direct conversion from string to biginteger to avoid errors
-  - possible solution: https://stackoverflow.com/questions/64148440/biginteger-parsing-scientific-notation-with-an-exponent-larger-than-1000-results
-
-  possible solution found:
-  replaced BigInt(+inputValue) with (+inputValue).toLocaleString('fullwide', { useGrouping: false })
-
-  new solution works with scientific notation
-  old solution works with standard form
-
-  9.9999999999999999e100 => rounding error when consecutive 9s are used 
-
-  LMAO WTF
-  scientific notation not working for some reasons
-  testing logging ASAP (im dead tired so not rn - 1:12 AM)
-  seems that any number that is greater than 1k that uses scientific notation breaks (most likely an issue with toLocaleString('en-US')
-
-  1.2e2. returns maximum exceeded error statement, which is completely false (wtf)
-
-  random errors with scientific notation - FML I want to die please remember to die
-  after it is complete use the new function to clean errors with scientific notation by manually applying scientific notation
-
-  consider adding code for removing extra decimals that is a replica of the code for removing extra "e"/"E"'s
-  
-*/
-
 const displayResult = () => { // Function for updating the output text
   const inputValue = input();
   console.log(inputValue);
